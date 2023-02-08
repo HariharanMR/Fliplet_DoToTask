@@ -72,7 +72,6 @@
                 >
                   Remove
                 </button>
-                <!-- <Dialog       :isOpened="isOpened"></Dialog> -->
               </div>
             </draggable>
             <h6 v-if="!isSort">
@@ -204,18 +203,16 @@
 <script>
 //import draggable
 import draggable from "vuedraggable";
-// import Dialog from "./components/Dialog.vue"
+
 export default {
   name: "doto-board",
   components: {
     //import draggable as a component
     draggable,
-    // Dialog
   },
   data() {
     return {
       doneSort: "DESC",
-      isOpened: true,
       inProgressSort: "DESC",
       // for new tasks
       newTask: "",
@@ -244,6 +241,10 @@ export default {
         this.arrInProgress = this.arrNewTask.filter(
           (ele) => ele.status === false
         );
+      }
+      else
+      {
+        this.newTask = "";
       }
     },
     // remove tasks method
@@ -276,6 +277,7 @@ export default {
         (ele) => ele.status === false
       );
     },
+    // sortBy in ASC and DESC
     sortBy: function (type) {
       if (type === "In Progress") {
         this.arrInProgress =
@@ -342,10 +344,8 @@ export default {
 }
 .addtask {
   display: flex;
-  /* justify-content: center; */
 }
 .main {
-  /* margin: 30px; */
   border: 1px solid #ccc;
   border-radius: 10px;
   padding: 40px;
