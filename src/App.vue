@@ -1,7 +1,7 @@
 <template>
   <div class="main d-grid">
     <div class="mt-2 h-100">
-      <h5 style="font-size: 30px">Create Task</h5>
+      <h5 class="createTask">Create Task</h5>
       <div class="row">
         <div class="col form-inline">
           <input
@@ -24,7 +24,7 @@
           </button>
         </div>
       </div>
-      <h5 style="margin: 15px 0px; font-size: 30px">Task List</h5>
+      <h5 class="tasks">Task List</h5>
       <div class="row column-split">
         <div class="col-6">
           <div class="p-4 card bg-transparent h-100 position-relative">
@@ -216,13 +216,7 @@ export default {
       inProgressSort: "DESC",
       // for new tasks
       newTask: "",
-      // 4 arrays to keep track of our 4 statuses
-      arrNewTask: [
-        { name: "Code Sign Up Page", status: false },
-        { name: "Test Dashboard", status: false },
-        { name: "Style Registration", status: false },
-        { name: "Help with Designs", status: false },
-      ],
+      arrNewTask: [],
       arrInProgress: [],
       arrDone: [],
       isSort: true,
@@ -428,5 +422,12 @@ body {
 }
 .h6 {
   font-size: 1.5rem;
+}
+.tasks
+{
+  margin: 15px 0px; font-size: 30px;
+}
+.createTask{
+  font-size: 30px;
 }
 </style>
